@@ -1,0 +1,21 @@
+{
+  "name": "spaw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "captrueZH.js",
+  "scripts": {
+    "start": "node index.js",
+    "db":"node db.js"
+  },
+  "keywords": [
+    "ZH"
+  ],
+  "author": "chenqihao",
+  "license": "ISC",
+  "devDependencies": {
+    "async": "^2.1.5",
+    "cheerio": "^0.22.0",
+    "mongodb": "^2.0.55",
+    "mongoskin": "^2.1.0"
+  }
+}

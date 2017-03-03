@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<div role="navigation" class="zu-top" data-za-module="TopNavBar">
+<div class="zg-wrap modal-shifting clearfix" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_zhihu_logo">&#x77E5;&#x4E4E;</a>
+
+
+
+<ul class="topnav-noauth clearfix">
+<li>
+<a href="javascript:;" class="js-signup-noauth"><i class="zg-icon zg-icon-dd-home"></i>&#x6CE8;&#x518C;&#x77E5;&#x4E4E;</a>
+</li>
+<li>
+<a href="javascript:;" class="js-signin-noauth">&#x767B;&#x5F55;</a>
+</li>
+</ul>
+
+
+
+<button class="zu-top-add-question" id="zu-top-add-question">&#x63D0;&#x95EE;</button>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+
+
+
+<input type="hidden" name="type" value="content">
+<label for="q" class="hide-text">&#x77E5;&#x4E4E;&#x641C;&#x7D22;</label><input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" maxlength="100" placeholder="&#x641C;&#x7D22;&#x4F60;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5185;&#x5BB9;...">
+<button type="submit" class="zu-top-search-button"><span class="hide-text">&#x641C;&#x7D22;</span><span class="sprite-global-icon-magnifier-dark"></span></button>
+</form>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-nav-home">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_home">&#x9996;&#x9875;</a>
+</li>
+
+
+
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">&#x8BDD;&#x9898;</a>
+</li>
+
+<li class="zu-top-nav-li " id="zh-top-nav-explore">
+<a class="zu-top-nav-link" href="/explore">&#x53D1;&#x73B0;</a>
+</li>
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&#xA0;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">&#x6D88;&#x606F;</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">&#x7528;&#x6237;</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">&#x8D5E;&#x540C;&#x548C;&#x611F;&#x8C22;</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content message">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content user" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content thanks" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">&#x67E5;&#x770B;&#x5168;&#x90E8; &#xBB;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="&#x901A;&#x77E5;&#x8BBE;&#x7F6E;"><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="&#x5173;&#x95ED;" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-redirect-info" style="display:none"></div>
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-notification-summary" style="display:none;">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<span class="zu-global-notify-icon"></span>
+<ul class="zu-question-notify-wrap">
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="zg-wrap zu-main clearfix with-indention-votebar" itemscope="" itemtype="http://schema.org/Question" id="zh-single-question-page" data-urltoken="24492829" role="main">
+<div class="zu-main-content">
+<div class="zu-main-content-inner">
+
+
+<meta itemprop="isTopQuestion" content="false">
+<meta itemprop="visitsCount" content="12572">
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag" href="/topic/19550901" data-hovercard="t$b$19550901" data-token="19550901" data-topicid="225" data-za-element-name="Title">
+&#x524D;&#x7AEF;&#x5F00;&#x53D1;
+</a>
+
+<a class="zm-item-tag" href="/topic/19551323" data-hovercard="t$b$19551323" data-token="19551323" data-topicid="367" data-za-element-name="Title">
+HTML
+</a>
+
+<a class="zm-item-tag" href="/topic/19557564" data-hovercard="t$b$19557564" data-token="19557564" data-topicid="2462" data-za-element-name="Title">
+HTML5
+</a>
+
+<a class="zm-item-tag" href="/topic/19562598" data-hovercard="t$b$19562598" data-token="19562598" data-topicid="4128" data-za-element-name="Title">
+CSS3
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="false">
+<h2 class="zm-item-title">
+
+<span class="zm-editable-content">&#x5F53;&#x4E00;&#x4E2A;&#x4EBA;&#x8BF4;&#x81EA;&#x5DF1;&#x201C;&#x7CBE;&#x901A;JavaScript, CSS3, HTML5&#x201D;&#x65F6;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x7406;&#x89E3;&#xFF1F;</span>
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="1979119" data-action="/question/detail">
+
+<div class="zm-editable-content"></div>
+
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>2 &#x6761;&#x8BC4;&#x8BBA;
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>&#x5206;&#x4EAB;
+</a>
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+
+
+<div class="zh-answers-title clearfix">
+
+<div id="zh-answers-filter" class="Sorter">
+
+<span class="lbl">&#x9ED8;&#x8BA4;&#x6392;&#x5E8F;</span>
+<a class="lbl" href="/question/24492829?sort=created">&#x6309;&#x65F6;&#x95F4;&#x6392;&#x5E8F;</a>
+
+<i class="zg-icon zg-icon-double-arrow"></i>
+</div>
+
+<h3 data-num="20" id="zh-question-answer-num">20 &#x4E2A;&#x56DE;&#x7B54;</h3>
+</div>
+
+<div id="zh-question-answer-wrap" data-pagesize="10" class="zh-question-answer-wrapper" data-widget="navigable" data-navigable-options="{&quot;items&quot;: &quot;&gt;.zm-item-answer&quot;}" data-init="{&quot;params&quot;: {&quot;url_token&quot;: 24492829, &quot;pagesize&quot;: 10, &quot;offset&quot;: 0}, &quot;nodename&quot;: &quot;QuestionAnswerListV2&quot;}">
+
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded" itemprop="topAnswer" itemscope="" itemtype="http://schema.org/Answer" data-aid="11898614" data-atoken="41265600" data-collapsed="0" data-created="1425619333" data-deleted="0" data-helpful="1" data-isowner="0" data-copyable="1">
+<link itemprop="url" href="/question/24492829/answer/41265600">
+<meta itemprop="answer-id" content="11898614">
+<meta itemprop="answer-url-token" content="41265600">
+<a class="zg-anchor-hidden" name="answer-11898614"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">11</span>
+<span class="label sr-only">&#x8D5E;&#x540C;</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">&#x53CD;&#x5BF9;</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/Ivony" target="_blank" data-hovercard="p$t$Ivony"><img src="https://pic3.zhimg.com/23a5bca736788ab73e3bd58e56761cda_s.jpg" class="zm-list-avatar avatar"></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link" data-hovercard="p$t$Ivony" target="_blank" href="/people/Ivony">Ivony</a><span class="icon icon-badge-best_answerer icon-badge" data-tooltip="s$b$&#x4F18;&#x79C0;&#x56DE;&#x7B54;&#x8005;"></span></span><span class="badge-summary"><a href="/people/Ivony#hilightbadge" target="_blank">&#x7F16;&#x7A0B;&#x8BDD;&#x9898;&#x4F18;&#x79C0;&#x56DE;&#x7B54;&#x8005;</a></span>
+
+
+
+<span title="&#x88C5;&#x914D;&#x8111;&#x888B;&#x4E00;&#x8DEF;&#x8D70;&#x597D;&#x3002;" class="bio">
+&#x88C5;&#x914D;&#x8111;&#x888B;&#x4E00;&#x8DEF;&#x8D70;&#x597D;&#x3002;
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="11">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">11</span>&#xA0;&#x4EBA;&#x8D5E;&#x540C;</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1979119" data-action="/answer/content" data-author-name="Ivony" data-entry-url="/question/24492829/answer/41265600">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+&#x8BF4;&#x660E;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x95EE;&#x95EE;&#x89C4;&#x8303;&#x7EC6;&#x8282;&#x7684;&#x95EE;&#x9898;&#x3002; &#x53CD;&#x6B63;&#x6211;&#x662F;&#x8FD9;&#x4E48;&#x7406;&#x89E3;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5F88;&#x591A;&#x4EBA;&#x5C31;&#x8DEA;&#x4E86;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x65E2;&#x7136;&#x5199;&#x7CBE;&#x901A;&#x5C31;&#x8BE5;&#x628A;&#x89C4;&#x8303;&#x5168;&#x90E8;&#x8BFB;&#x61C2;&#x4E86;&#x624D;&#x5BF9;&#x3002; &#x4E3E;&#x4E2A;&#x6817;&#x5B50; &#x4E86;&#x89E3;C# &#x95EE;&#xFF1A;C#&#x662F;&#x5F3A;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x5417;&#xFF1F;&#x652F;&#x6301;&#x6CDB;&#x578B;&#x5417;&#xFF1F; &#x719F;&#x6089;C# &#x95EE;&#xFF1A;C#&#x4E2D;string&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8FD8;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF1F;&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x540C;&#xFF1F;&#x2026;
+
+<a href="/question/24492829/answer/41265600" class="toggle-expand">&#x663E;&#x793A;&#x5168;&#x90E8;</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+&#x8BF4;&#x660E;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x95EE;&#x95EE;&#x89C4;&#x8303;&#x7EC6;&#x8282;&#x7684;&#x95EE;&#x9898;&#x3002;<br><br>&#x53CD;&#x6B63;&#x6211;&#xFFFD;&#xFFFD;&#xFFFD;&#x8FD9;&#x4E48;&#x7406;&#x89E3;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5F88;&#x591A;&#x4EBA;&#x5C31;&#x8DEA;&#x4E86;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x65E2;&#x7136;&#x5199;&#x7CBE;&#x901A;&#x5C31;&#x8BE5;&#x628A;&#x89C4;&#x8303;&#x5168;&#x90E8;&#x8BFB;&#x61C2;&#x4E86;&#x624D;&#x5BF9;&#x3002;<br><br><br>&#x4E3E;&#x4E2A;&#x6817;&#x5B50;<br>&#x4E86;&#x89E3;C#<br>&#x95EE;&#xFF1A;C#&#x662F;&#x5F3A;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x5417;&#xFF1F;&#x652F;&#x6301;&#x6CDB;&#x578B;&#x5417;&#xFF1F;<br><br>&#x719F;&#x6089;C#<br>&#x95EE;&#xFF1A;C#&#x4E2D;string&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8FD8;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF1F;&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x540C;&#xFF1F;<br><br>&#x7CBE;&#x901A;C#<br>&#x95EE;&#xFF1A;fixed&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;&#x4EC0;&#x4E48;&#x6307;&#x9488;&#x4E0D;&#x9700;&#x8981;fixed&#xFF1F;&#x5982;&#x4F55;&#x5378;&#x8F7D;&#x52A0;&#x8F7D;&#x7684;&#x7A0B;&#x5E8F;&#x96C6;&#xFF1F;
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="11898614-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24492829/answer/41265600">&#x53D1;&#x5E03;&#x4E8E; 2015-03-06</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>8 &#x6761;&#x8BC4;&#x8BBA;</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>&#x611F;&#x8C22;</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>&#x5206;&#x4EAB;</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>&#x6536;&#x85CF;</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&#x2022;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">&#x6CA1;&#x6709;&#x5E2E;&#x52A9;</a>
+
+<span class="zg-bull zu-autohide">&#x2022;</span>
+<a href="#" class="meta-item zu-autohide js-report">&#x4E3E;&#x62A5;</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&#x2022;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+&#x4F5C;&#x8005;&#x4FDD;&#x7559;&#x6743;&#x5229;
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded" itemscope="" itemtype="http://schema.org/Answer" data-aid="7837225" data-atoken="31130717" data-collapsed="0" data-created="1411876873" data-deleted="0" data-helpful="1" data-isowner="0" data-copyable="1">
+<link itemprop="url" href="/question/24492829/answer/31130717">
+<meta itemprop="answer-id" content="7837225">
+<meta itemprop="answer-url-token" content="31130717">
+<a class="zg-anchor-hidden" name="answer-7837225"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">13</span>
+<span class="label sr-only">&#x8D5E;&#x540C;</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">&#x53CD;&#x5BF9;</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/Breeze9527" target="_blank" data-hovercard="p$t$Breeze9527"><img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-list-avatar avatar"></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link" data-hovercard="p$t$Breeze9527" target="_blank" href="/people/Breeze9527">Z Breeze</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="13">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">13</span>&#xA0;&#x4EBA;&#x8D5E;&#x540C;</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1979119" data-action="/answer/content" data-author-name="Z Breeze" data-entry-url="/question/24492829/answer/31130717">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+&#x4E00;&#x76F4;&#x5728;&#x5B66;&#x4E60;&#x524D;&#x7AEF;&#xFF0C;&#x5E76;&#x4E14;&#x672A;&#x6765;&#x60F3;&#x627E;&#x4E2A;&#x524D;&#x7AEF;&#x7684;&#x5C97;&#x4F4D; &#x6240;&#x4EE5;&#x5BF9;&#x5404;&#x79CD;&#x524D;&#x7AEF;&#x7684;&#x62DB;&#x8058;&#x4FE1;&#x606F;&#x6BD4;&#x8F83;&#x5173;&#x5FC3; &#x800C;&#x6BCF;&#x5F53;&#x6211;&#x770B;&#x89C1;&#x7CBE;&#x901A;CSS&#x3001;Javascript&#x3001;jQuery&#x3001;PHP&#x8FD9;&#x4E9B;&#x4E2A;&#x5B57;&#x773C;&#x7684;&#x65F6;&#x5019;... &#x6211;&#x4F1A;&#x4E0D;&#x7531;&#x5F97;&#x9677;&#x5165;&#x5927;&#x6CE2;&#x7684;&#x9648;&#x601D;..... &#x5230;&#x5E95;&#x6211;&#x5F31;&#x9E21;&#x8FD8;&#x662F;&#x90A3;&#x4E9B;&#x5199;&#x62DB;&#x8058;&#x4FE1;&#x606F;&#x7684;&#x4EBA;&#x715E;&#x7B14;&#xFF1F; &#x7CBE;&#x901A;&#x8FD9;&#x8BCD;&#x662F;&#x80FD;&#x968F;&#x4FBF;&#x8BF4;&#x7684;&#xFF1F; &#x7CBE;&#x901A;&#x4E86;&#x8FD9;&#x2026;
+
+<a href="/question/24492829/answer/31130717" class="toggle-expand">&#x663E;&#x793A;&#x5168;&#x90E8;</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+&#x4E00;&#x76F4;&#x5728;&#x5B66;&#x4E60;&#x524D;&#x7AEF;&#xFF0C;&#x5E76;&#x4E14;&#x672A;&#x6765;&#x60F3;&#x627E;&#x4E2A;&#x524D;&#x7AEF;&#x7684;&#x5C97;&#x4F4D;<br>&#x6240;&#x4EE5;&#x5BF9;&#x5404;&#x79CD;&#x524D;&#x7AEF;&#x7684;&#x62DB;&#x8058;&#x4FE1;&#x606F;&#x6BD4;&#x8F83;&#x5173;&#x5FC3;<br>&#x800C;&#x6BCF;&#x5F53;&#x6211;&#x770B;&#x89C1;&#x7CBE;&#x901A;CSS&#x3001;Javascript&#x3001;jQuery&#x3001;PHP&#x8FD9;&#x4E9B;&#x4E2A;&#x5B57;&#x773C;&#x7684;&#x65F6;&#x5019;...<br>&#x6211;&#x4F1A;&#x4E0D;&#x7531;&#x5F97;&#x9677;&#x5165;&#x5927;&#x6CE2;&#x7684;&#x9648;&#x601D;.....<br><br><br><br><br><br><br><br>&#x5230;&#x5E95;&#x6211;&#x5F31;&#x9E21;&#x8FD8;&#x662F;&#x90A3;&#x4E9B;&#x5199;&#x62DB;&#x8058;&#x4FE1;&#x606F;&#x7684;&#x4EBA;&#x715E;&#x7B14;&#xFF1F;<br>&#x7CBE;&#x901A;&#x8FD9;&#x8BCD;&#x662F;&#x80FD;&#x968F;&#x4FBF;&#x8BF4;&#x7684;&#xFF1F;<br>&#x7CBE;&#x901A;&#x4E86;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#xFFFD;&#xFFFD;&#xFFFD;&#x4EBA;&#x4F1A;&#x770B;&#x5F97;&#x4E0A;&#x8FD9;&#x51E0;&#x5343;&#x7684;&#x5DE5;&#x8D44;&#x4E48;
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="7837225-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24492829/answer/31130717">&#x53D1;&#x5E03;&#x4E8E; 2014-09-28</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>2 &#x6761;&#x8BC4;&#x8BBA;</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>&#x611F;&#x8C22;</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>&#x5206;&#x4EAB;</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>&#x6536;&#x85CF;</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&#x2022;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">&#x6CA1;&#x6709;&#x5E2E;&#x52A9;</a>
+
+<span class="zg-bull zu-autohide">&#x2022;</span>
+<a href="#" class="meta-item zu-autohide js-report">&#x4E3E;&#x62A5;</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&#x2022;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+&#x4F5C;&#x8005;&#x4FDD;&#x7559;&#x6743;&#x5229;
+</a>
+
+
+</div>
+</div>
+</div>
+</body>
+</html>
