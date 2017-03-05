@@ -2,7 +2,8 @@
 1:安装mongodb， 并启动mongodb， 默认端口， 没有用户名和密码验证;  
 2:npm install 安装 mongoskin, cheerio, mongose, async等相关依赖;  
 3:npm start 开始抓取数据;  
-4:npm run db 查看数据，也可以用可视化工具查看
+4:使用可视化工具查看数据
+5:抓取的图片会保存在本地项目的images目录下
 
 #关键字添加
 打开当前项目下的words.txt， 关键字包围在大括号内步，并通过逗号分开， 实例如下:

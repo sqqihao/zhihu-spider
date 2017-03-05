@@ -3,6 +3,7 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 const cfg = JSON.parse( fs.readFileSync("config.cfg") );
 const async = require("async");
+const saveImage = require("./saveImage.js");
 
 /**
 *专门用来fetch知乎的问题列表
@@ -16,6 +17,7 @@ function getHTML(word, fn) {
 		//console.log($.html())
 		//持续添加html
 		htmlResponse = dataAppend(htmlResponse, { q : word }, 10, fn);
+		fn($.html());
 	})
 }
 
@@ -74,6 +76,7 @@ function fetchDetail(summaryObj, dbCallback) {
 		//循环关键字下的所有问题列表
 		let summaryList = summaryObj[key];
 		for(let i=0; i<summaryList.length; i++) {
+		//for(let i=0; i<1; i++) {
 			let item = summaryList[i];
 			//获取详细信息
 			taskDetailList.push((cb) => {
@@ -86,26 +89,32 @@ function fetchDetail(summaryObj, dbCallback) {
 				common.httpGet( cfg.index+item.urlID, {}, (htmlString) => {
 					//conosle.log("dd");
 					let $ = cheerio.load(htmlString);
+					console.log(htmlString);
 					//console.log(htmlString);
 					var questionDetail = {
 							"answer" : $("#zh-question-answer-num").text(),
 							"title" : $(".zm-item-title").text().replace(/\n+/ig,""),
+							"qustionDetail":$("#zh-question-detail").text(),
 							"topic" : $(".zm-tag-editor").text().match(/[^\n]+/ig),
 							"answers" : [
 						]
 					};
 					let eContent = $("#zh-question-answer-wrap");
 					let itemAnswers = eContent.find(".zm-item-answer");
+					//获取用户的评论内容;
+
 					for(var j=0 ; j<itemAnswers.length; j++) {
 						let itemAnswer = $(itemAnswers[j]);
+						let content = itemAnswer.find(".zm-item-rich-text").html();
+						content = saveImage.trim(content);
 						questionDetail.answers.push({
 							voteUp : itemAnswer.find(".up .count").text(),
 							answerAuthorInfo : itemAnswer.find(".author-link").text(),
 							userHref : itemAnswer.find(".author-link").attr("href"),
 							badgeSummary : itemAnswer.find(".badge-summary").text(),
 							data : itemAnswer.find(".answer-date-link").text(),
-							comments : itemAnswers.find(".addcomment").text(),
-							content : itemAnswer.find(".zm-item-rich-text").text(),
+							comments : itemAnswers.find(".addcomment").html(),
+							content : content,
 						})
 					}
 					dbCallback(key, questionDetail);
