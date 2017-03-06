@@ -1,9 +1,13 @@
+/**
+    因为保存图片的字符串查找， 以及div的样式class,id ,data-url不好操作
+*/
 const fs = require("fs");
 const https = require("https");
 const cfg = JSON.parse( fs.readFileSync("config.cfg") );
 const reg = /<img[^<]+>/gi;
 const cheerio = require("cheerio");
 const async = require("async");
+const common = require("./common.js");
 
 function getImage(url, fileDir) {
     https.get(url, function(res){
@@ -15,25 +19,12 @@ function getImage(url, fileDir) {
         res.on("end", function(){
             fs.writeFile(fileDir, imgData, "binary", function(err){
                 if(err){
-                    console.log("down fail");
+                    console.log("download fail");
                 }
-                console.log("down success");
+                console.log("download success");
             });
         });
     });   
-}
-function uuid() {
-    var s = [];
-    var hexDigits = "0123456789abcdef";
-    for (var i = 0; i < 36; i++) {
-        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
-    }
-    s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
-    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
-    s[8] = s[13] = s[18] = s[23] = "-";
-  
-    var uuid = s.join("");
-    return uuid;
 }
 
 //图片字符串的处理
@@ -41,25 +32,23 @@ function trim(htmlString) {
     //启动异步线程， 避免多次连接导致服务器拒绝连接;
     let taskDetailList = [];
     if(typeof htmlString!=="string") return;
-    //去除所有div的样式
-    //htmlString = htmlString.replace(/<div[^>]*>([.\n\r]*)<\/div>/gi, function($0 ,$1) {return $1});
-    //console.log(htmlString);
-    var imgs = htmlString.match(/<img[^<]+>/gi);
+    var $ = cheerio.load(htmlString);
+    var imgs = $("img");
     for(var i=0; i<(imgs&&imgs.length) ;i++) {
-        let img = imgs[i];
-        var $ = cheerio.load(img);
-        var imgUrl = $("img").attr("data-actualsrc");
-        var imgId = uuid();
-        var loacalUrl = `${cfg.imgDir}${imgId}.png`;
+        let imgUrl = imgs.eq(i).attr("data-original");
+        if(!imgUrl)continue;
+        let localUrl = imgUrl.match(/\/([^\/]*)$/)[1];
+        //var imgId = uuid();
+        loacalUrl = `${cfg.imgDir}${localUrl}`;
         taskDetailList.push((cb) => {
             getImage(imgUrl, loacalUrl);
+            common.sleep(1000);
         });
-        htmlString = htmlString.replace($.html(), `<img src="${loacalUrl}">`);
     }
     async.parallelLimit(taskDetailList, 1 , ()=> {
         console.log("img downloading");
     });
-    //console.log(htmlString);
-    return htmlString;
+    console.log($.html());
+    return $.html();
 }
 exports.trim = trim

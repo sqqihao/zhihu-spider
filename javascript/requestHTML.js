@@ -16,11 +16,10 @@ function getHTML(word, fn) {
 		let $ = cheerio.load(htmlResponse);
 		//console.log($.html())
 		//持续添加html
-		htmlResponse = dataAppend(htmlResponse, { q : word }, 10, fn);
+		//htmlResponse = dataAppend(htmlResponse, { q : word }, 10, fn);
 		fn($.html());
 	})
 }
-
 
 //数据处理HTML 2 JSON
 function parseHTML2JSON(htmlString, summaryObj, key) {
@@ -89,12 +88,15 @@ function fetchDetail(summaryObj, dbCallback) {
 				common.httpGet( cfg.index+item.urlID, {}, (htmlString) => {
 					//conosle.log("dd");
 					let $ = cheerio.load(htmlString);
-					console.log(htmlString);
 					//console.log(htmlString);
+					//console.log(htmlString);
+					let detail = saveImage.trim($("#zh-question-detail").html());
+					detail = saveImage.trim(detail);
+					//let detail = $("#zh-question-detail").text();
 					var questionDetail = {
 							"answer" : $("#zh-question-answer-num").text(),
 							"title" : $(".zm-item-title").text().replace(/\n+/ig,""),
-							"qustionDetail":$("#zh-question-detail").text(),
+							"qustionDetail":detail,
 							"topic" : $(".zm-tag-editor").text().match(/[^\n]+/ig),
 							"answers" : [
 						]
@@ -107,6 +109,7 @@ function fetchDetail(summaryObj, dbCallback) {
 						let itemAnswer = $(itemAnswers[j]);
 						let content = itemAnswer.find(".zm-item-rich-text").html();
 						content = saveImage.trim(content);
+						//let content = itemAnswer.find(".zm-item-rich-text").text();
 						questionDetail.answers.push({
 							voteUp : itemAnswer.find(".up .count").text(),
 							answerAuthorInfo : itemAnswer.find(".author-link").text(),
@@ -120,7 +123,7 @@ function fetchDetail(summaryObj, dbCallback) {
 					dbCallback(key, questionDetail);
 					cb();
 				});
-			})
+			});
 		};
 	}
 
